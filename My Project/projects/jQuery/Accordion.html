@@ -1,0 +1,95 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset = "UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>jQuery Accordion</title>
+        <link rel="stylesheet" href="accordion.css">
+    </head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+            background: linear-gradient(to bottom, #b5f0a4, #1779db);
+            background-size: 400% 400%;
+            background-repeat: no-repeat;
+        }
+
+        .game-item {
+            width: 80%;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        .game-description {
+            border: 3px solid #ccc;
+            border-radius: 15px;
+            margin: 20px;
+            background-color: #e8e8c0;
+            display: none;
+            padding: 10px;
+        }
+        .icon {
+            display: inline-block;
+            background-color: #9aa2ec;
+            border-radius: 50%;
+            transition: transform 0.3s ease;
+        }
+
+        .rotate {
+            transform: rotate(90deg);
+        }
+
+        .symbol {
+            display: inline-block;
+            padding: 5px 10px;
+        }
+
+    </style>
+
+    <body>
+    <h1>Top Games</h1>
+
+    <div class="game-item">
+<h3 class="game-title"><span class="icon"> <span class="symbol"> > </span></span> The Legend of Zelda: Breath of the Wild</h3>
+<p class="game-description">An open-world action-adventure game where players explore the vast kingdom of Hyrule.</p>
+    </div>
+
+    <div class="game-item">
+<h3 class="game-title"><span class="icon"> <span class="symbol"> > </span></span> Super Mario Odyssey</h3>
+<p class="game-description">A 3D platformer where Mario embarks on a globe-trotting adventure to save Princess Peach.</p>
+    </div>
+
+    <div class="game-item">
+<h3 class="game-title"><span class="icon"> <span class="symbol"> > </span></span> Minecraft</h3>
+<p class="game-description">A sandbox game that allows players to build and explore virtual worlds made up of blocks.</p>
+    </div>
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+    $(document).ready(function() { 
+    var gameTitle = $('.game-title');
+
+
+
+        $('.game-title').click(function(){
+            $(this).next('.game-description').slideToggle();
+            $(this).find('.icon').toggleClass('rotate');
+            console.log(gameTitle);
+        });
+})
+
+
+
+
+
+    </script>
+
+    </body>
+ </html>

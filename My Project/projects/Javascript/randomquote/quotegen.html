@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang ="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quote Generator</title>
+</head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin: 35px 0px;
+        padding: 20px;
+        background-image: linear-gradient(rgba(255,255,255,0.6), rgba(255,255,255,0.6)), url('crowd.jpg');
+        background-size: cover;
+    }
+
+    header {
+        background-color: #4CAF50;
+        color: rgb(218, 208, 208);
+        padding: 10px 0;
+        margin-bottom: 20px;
+    }
+
+    h1 {
+        margin: 0;
+    }
+
+    #quote {
+        font-size: 24px;
+        margin: 20px 0;
+        color: #555;
+    }
+
+    #bodie {
+        background-color: rgba(255, 255, 255, 0.8);
+        padding: 20px;
+        border-radius: 10px;
+        display: inline-block;
+    }
+    #people-count {
+        font-size: 72px;
+        color: #333;
+    }
+    
+    button {
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+    }
+    
+</style>
+<body>
+<div id="bodie">
+<h1>Quote Generator</h1>
+<h2 id="quote">Click for a quote.</h2>
+
+<button id="quote-btn">New Quote Please!</button>
+
+</div>
+    <script src="quotegen.js"></script>
+</body>
+
+</html> 

@@ -1,0 +1,105 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset = "UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>jQuery Accordion</title>
+        <link rel="stylesheet" href="accordion.css">
+    </head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+            background-color: rgb(245, 220, 245);
+        }
+        h1{
+            color: rgb(113, 61, 113);
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+            font-size: 48px;
+        }
+        #carousel {
+    width: 600px;           /* set a fixed width or 100% for responsive */
+    height: 400px;          /* set a height to fit images nicely */
+    position: relative;      /* allows buttons to be positioned inside */
+    overflow: hidden;        /* hides any slides that are not active */
+    margin: 0 auto;          /* centers the carousel on the page */
+    border: 2px solid #ccc;  /* optional, just for visibility */
+}
+
+.slide {
+    width: 100%;         /* each slide fills the container width */
+    height: 100%;        /* each slide fills the container height */
+    display: none;       /* hide all slides initially; jQuery will show one */
+    position: absolute;  /* stack slides on top of each other */
+    top: 0;
+    left: 0;
+}
+
+.slide img {
+    width: 100%;       /* makes the image fit the slide container */
+    height: 100%;      /* stretches to container height */
+    object-fit: cover; /* maintains aspect ratio, crops if necessary */
+    display: block;    /* removes inline gap below image */
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: rgb(113, 61, 113);
+    border: none;
+    border-radius: 5px;
+    margin: 10px;
+    color: rgb(242, 190, 249);
+}
+
+    </style>
+    <body>
+<h1>Monochrome Carousel</h1>
+<div id="carousel">
+<div class="slide">
+<img src="./pexels-iriser-1381679.jpg" alt="Image 1" width="400" height="300">
+</div><div class="slide">
+<img src="./pexels-invisiblepower-254770.jpg" alt="Image 2" width="400" height="300">
+</div><div class="slide">
+<img src="./pexels-abdalla-13372577.jpg" alt="Image 3" width="400" height="300">
+</div>
+</div>
+    <div id="controls">
+        <button id="next">Next</button>
+        <button id="previous">Previous</button>
+    </div>
+
+
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+        <script>
+var slides = $('.slide');  // select by class
+var currentSlide = 0;
+
+// Show first slide
+slides.hide();
+slides.eq(0).show();
+
+$('#next').click(function() {
+    currentSlide++;
+    if (currentSlide >= slides.length) {
+        currentSlide = 0;
+    } 
+    slides.hide();
+    slides.eq(currentSlide).show();
+});
+
+$('#previous').click(function() {
+    currentSlide--;
+    if (currentSlide < 0) {
+        currentSlide = slides.length - 1;
+    }
+    slides.hide();
+    slides.eq(currentSlide).show();
+});
+
+        </script>
+        </body>
+        </html>

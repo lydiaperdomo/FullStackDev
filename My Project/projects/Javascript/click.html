@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Click Counter</title>
+</head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin: 0;
+        padding: 20px;
+        background: lightblue;
+        background-size: cover;
+        transition: background-color 0.5s ease;
+    }  
+    header {
+        background: linear-gradient(90deg, #a4daa6, #845ed6);
+        color: rgb(0, 0, 0);
+        padding: 10px 0;
+        margin-bottom: 20px;
+        font-size: 24px;
+    }
+    button {
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        color: white;
+        border: 5px dotted white;
+        border-radius: 5px;
+        margin: 5px;
+    }
+    #reset {
+        background-color: #b49ce7;
+        font-size: smaller;
+    }
+    #button {
+        background-color: #a4daa6;
+    }
+
+    </style>
+<body>
+<header> Click Counter</header>
+
+<h3 id="count">0</h3>
+
+
+<button id="button">Click Me!</button>
+<p>
+<button id="reset" onclick="location.reload()">Reset</button>
+
+<script>
+    var colors = ['#FF5733', '#33FF57', '#3357FF', '#F333FF', '#33FFF5'];
+
+    var count = 0;
+    document.getElementById("button").addEventListener("click", function(){
+        count++;
+        document.getElementById("count").innerText = count;
+
+if (count % 10 == 0) {
+    document.body.style.backgroundColor = colors[count / 10 % colors.length];
+
+}
+    });
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,108 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Love Calculator</title>
+
+
+    <!--h1 font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap" rel="stylesheet">
+<style>
+body {
+    background-color: #ffcccb;
+    font-family: 'Caveat', cursive;
+}
+h1 {
+    text-align: center;
+    font-size: 48px;
+    background: linear-gradient(to right, #e13c12, #ea8f8f);
+    color: white;
+    text-shadow: #000000 2px 2px 4px;
+}
+p {
+    text-align: center;
+    font-size: 24px;
+}
+
+input {
+    display: block;
+    margin: 10px auto;
+    padding: 10px;
+    font-size: 12px;
+    border: 2px solid #df5f5f;
+    border-radius: 5px;
+}
+
+button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #ff6666;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+a {
+  color: rgb(226, 161, 19); /* Sets the default color of all unvisited links to black */
+  text-decoration: none; /* Removes the default underline */
+}
+
+a:visited {
+  color: black; /* Sets the color of visited links to black */
+}
+
+a:hover {
+  color: gray; /* Changes the color when the user hovers over the link */
+  text-decoration: underline; /* Adds an underline on hover for better user experience */
+}
+
+a:active {
+  color: darkgray; /* Changes the color when the link is being clicked */
+}
+
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    padding-top: 50px;
+
+}
+</style>
+
+</head>
+<body onload="alert('Welcome to the Love Calculator!')">
+<H1>Love Calculator</H1>
+
+<p>Let's see how compatible you and your lover are:</p>
+<input type="text" id="name1" placeholder="Your Name">
+<input type="text" id="name2" placeholder="Their Name">
+
+
+<div>
+
+<button onclick="loveScore()">Calculate Love Score</button>
+
+<div id="result" style="text-align: center; font-size: 20px; margin-top: 20px;"></div>
+
+</div>
+
+
+<footer class="container-fluid text-center" ">
+         <a href="#">Home</a>
+        <a href="/My Project/real/About2.html">About</a>
+      <a href="/My Project/real/Contactme2.html">Contact Me</a>
+        <a href="/My Project/real/Project2.html">Portfolio</a>
+        <a href="/My Project/real/Resume2.html">Resume</a>
+</footer>
+
+<script src="loveCalculator.js" charset="utf-8"></script>
+
+</body>
+</html>

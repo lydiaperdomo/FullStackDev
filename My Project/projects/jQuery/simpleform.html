@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Simple Form</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin-top: 50px;
+        background-color: rgb(240, 240, 232);
+    }
+
+    .error {
+        color: red;
+        font-size: 0.85em;
+        margin-top: 4px;
+    }
+
+    #successMessage {
+        color: green;
+        font-weight: bold;
+        margin-top: 20px;
+        font-size: 1em;
+    }
+
+    input {
+        display: block;
+        margin: 10px auto;
+        padding: 8px;
+        width: 250px;
+    }
+
+    button {
+        padding: 8px 16px;
+        cursor: pointer;
+    }
+</style>
+</head>
+<body>
+<h1>Simple Form</h1>
+
+<form id="simpleForm">
+    <input type="text" id="name" class="required" placeholder="Name">
+    <input type="email" id="email" class="required" placeholder="Email">
+    <input type="email" id="emailValid" class="required" placeholder="Confirm Email">
+    <button type="submit">Submit</button>
+</form>
+
+<div id="successMessage"></div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+$(document).ready(function() {
+
+    $('#simpleForm').submit(function(event) {
+        event.preventDefault(); // stop default submission
+
+        let isValid = true;
+        $('.error').remove(); // remove old errors
+        $('#successMessage').text(''); // clear old success message
+
+        // 1️⃣ Required fields
+        $('.required').each(function() {
+            if ($(this).val().trim() === '') {
+                isValid = false;
+                $(this).after("<span class='error'>This field is required.</span>");
+            }
+        });
+
+        // 2️⃣ Email format check
+        let email = $('#email').val().trim();
+        let emailValid = $('#emailValid').val().trim();
+        let emailPattern = /^[^\s@]+@[^\s@]+\.(com|net|org)$/i;
+
+        if (email !== '' && !emailPattern.test(email)) {
+            isValid = false;
+            $('#email').after("<span class='error'>Please enter a valid email ending with .com, .net, or .org</span>");
+        }
+
+        // 3️⃣ Confirm email match
+        if (email !== '' && emailValid !== '' && email !== emailValid) {
+            isValid = false;
+            $('#emailValid').after("<span class='error'>Emails do not match.</span>");
+        }
+
+        // 4️⃣ Show success message if valid
+        if (isValid) {
+            $('#successMessage').text('Form submitted successfully!');
+        }
+
+    });
+
+});
+</script>
+
+</body>
+</html>
