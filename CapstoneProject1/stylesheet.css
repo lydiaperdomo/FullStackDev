@@ -1,0 +1,15 @@
+
+            .intro {
+            display: flex;
+            justify-content: center; /* Centers horizontally */
+            align-items: center;     /* Centers vertically */
+            flex-direction: column;  /* Stacks elements vertically if you have multiple */
+            text-align: center;      /* Centers inline text and links */
+        }
+
+
+        body {
+            margin: 50;
+            padding: 5px 100px 50px 100px;
+        }
+

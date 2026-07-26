@@ -1,0 +1,12 @@
+# Dependencies
+node_modules/
+
+# macOS system files
+.DS_Store
+
+# Editor/IDE settings
+.vscode/
+
+# Logs
+*.log
+npm-debug.log*

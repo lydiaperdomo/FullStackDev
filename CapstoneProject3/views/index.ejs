@@ -1,0 +1,38 @@
+<%- include("partials/header") %>
+
+    <h1>Blogger</h1>
+
+<form action ="/posts" method="POST" class="form">
+    <input type ="text" name="title" placeholder="Title" class="Title">
+    <p>
+    <textarea type ="text" name="content" placeholder="Write your post...." class="Content-box"></textarea></p>
+    <p>
+    <button type ="submit">Submit</button>
+
+</form>
+
+<h2>Posts</h2>
+
+<div class ="posts">
+    <% posts.forEach(post => { %>
+        <div class="post">
+            <h3><%= post.title %></h3>
+            <p><%= post.content %></p>
+            <button class ="edit-button" data-id="<%= post.id %>">Edit</button>
+        </div>
+    <% }) %>
+</div>
+
+<script>
+document.querySelectorAll(".edit-button").forEach(button => {
+    button.addEventListener("click", (e) => {
+  const id = e.target.dataset.id;
+  window.location.href = `/posts/${id}/edit`;
+      });
+});
+
+
+</script>
+
+
+<%- include("partials/footer") %>
