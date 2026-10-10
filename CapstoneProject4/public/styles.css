@@ -1,0 +1,63 @@
+html {
+  min-height: 100%; /* root fills the window */
+}
+
+body {
+  margin: 0; /* remove the default page gap */
+  min-height: 100vh; /* at least window height */
+  display: flex; /* lets us center .flexcontainer */
+  justify-content: center; /* center horizontally */
+  align-items: center; /* center vertically */
+  background-image: url(sky.png); /* image from the public folder */
+  background-repeat: no-repeat; /* don't tile */
+  background-size: cover; /* fill the window */
+  background-position: center; /* keep the middle visible */
+  background-attachment: fixed; /* stay pinned while scrolling */
+  background-color: #87ceeb; /* fallback color */
+}
+
+.flexcontainer {
+  display: flex; /* lay out the two boxes */
+  flex-direction: column; /* stack them vertically */
+  gap: 16px; /* space between the boxes */
+  width: 50%; /* half the page width */
+  /* no height here, so it grows with its content */
+}
+
+.column-4 {
+  width: 100%; /* fill the container */
+  min-height: 50px; /* minimum only, so it can grow */
+  box-sizing: border-box; /* padding stays inside the width */
+  padding: 16px; /* space around the content */
+  background-color: #ffffff; /* white box */
+  display: flex; /* flex container for its content */
+  flex-direction: column; /* stack children */
+  align-items: center; /* center horizontally */
+  text-align: center; /* center text */
+  overflow-wrap: anywhere; /* wrap very long titles instead of spilling out */
+  border-radius: 30px; 
+}
+
+form {
+  display: flex; /* dropdown and button in a row */
+  gap: 8px; /* space between them */
+  align-items: center; /* line up vertically */
+  justify-content: center; /* center the pair */
+}
+
+select {
+  padding: 8px; /* space inside the dropdown */
+}
+
+ul {
+  list-style: none; /* remove bullets */
+  padding: 0; /* remove default indent */
+  margin: 0; /* remove default outer spacing */
+}
+
+.title{
+  font-size: 50px;
+  font-weight: bold;
+  color: rgb(251, 251, 251);
+  background: none;
+}

@@ -1,0 +1,48 @@
+<!DOCTYPE html> <%# tells the browser this is a modern HTML page %>
+<html lang="en"> <%# root element that holds everything %>
+<head> <%# info about the page, not shown in the body %>
+  <meta charset="UTF-8"> <%# lets special characters display correctly %>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <%# makes the page scale on phones %>
+  <title>Manga Finder</title> <%# the text shown on the browser tab %>
+  <link rel="stylesheet" href="/styles.css"> <%# loads your CSS file from the public folder %>
+</head>
+<body> <%# everything visible goes in here %>
+
+<div class="flexcontainer" >
+<div class="title column-4" >
+  Manga Recommendations
+</div>
+
+
+<div class="column-4">
+<form method="POST" action="/search" >
+<select name="options">
+  <% myArray.forEach(function(tag) { %> <%# loop over every tag object %>
+    <option value="<%= tag.id %>" <%= (locals.selectedTag === tag.id) ? "selected" : "" %>><%= tag.attributes.name.en %></option> <%# adds "selected" only when this option's id matches the one the user picked %>
+  <% }); %> <%# close the loop %>
+</select>
+    <button type="submit">Search</button>
+</form>
+</div>
+<div class="column-4">
+<% if (locals.error) { %> <%# only runs when the server sent an error message %>
+  <p><%= error %></p> <%# show the message to the user %>
+<% } %> <%# close the if %>
+
+<% if (locals.error) { %> <%# server sent an error message %>
+  <p><%= error %></p> <%# show it %>
+<% } else if (locals.mangaList && mangaList.length > 0) { %> <%# results exist and the list isn't empty %>
+  <ul>
+    <% mangaList.forEach(function(manga) { %> <%# loop over each manga %>
+      <li><%= Object.values(manga.attributes.title)[0] %></li> <%# first available title %>
+    <% }); %> <%# close the loop %>
+  </ul>
+<% } else if (locals.mangaList) { %> <%# a search ran but returned an empty list %>
+  <p>No manga found for that tag. Try another one!</p> <%# empty-results message %>
+<% } else { %> <%# no search yet: first page load %>
+  <p>Pick a tag and press Search to see manga here.</p> <%# default message %>
+<% } %> <%# close the whole if/else chain %>
+</div>
+</div>
+</body>
+</html>
