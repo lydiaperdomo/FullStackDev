@@ -1,0 +1,107 @@
+# Capstone 3 – Blog Web Application
+
+## 📌 Project Overview
+
+Capstone 3 is a basic blog web application developed as part of my full-stack web development learning journey.
+
+The application allows users to create, view, edit, and delete blog posts through a web interface. It also incorporates current date and time functionality.
+
+Blog posts are temporarily stored while the application is running and are not saved permanently. Restarting the server clears the posts.
+
+## 🛠️ Technologies Used
+
+- **HTML5** – Structures the blog pages and content.
+- **CSS3** – Provides styling and layout.
+- **JavaScript** – Handles application logic and date/time functionality.
+- **Node.js** – Runs JavaScript on the server.
+- **Express.js** – Handles HTTP requests, routing, and form submissions.
+- **EJS** – Dynamically renders blog posts and other content.
+- **HTTP GET & POST** – Supports page requests and blog operations.
+
+## ✨ Features
+
+- **Create Posts** – Add new blog entries.
+- **View Posts** – Display existing blog entries.
+- **Edit Posts** – Modify previously created posts.
+- **Delete Posts** – Remove blog entries.
+- **Current Date & Time** – Incorporates dynamically generated date and time information.
+- **Dynamic Content** – Displays blog content using server-side rendering.
+- **Express Routing** – Uses `app.get()` and `app.post()` to process requests.
+- **Temporary Storage** – Blog posts are not permanently saved.
+
+## ⚙️ How It Works
+
+The application uses Node.js and Express.js to manage requests and blog functionality.
+
+- `app.get()` retrieves and displays pages.
+- `app.post()` processes form submissions for creating, editing, and deleting posts.
+- `app.listen()` starts the server on a configured port.
+- EJS templates render dynamic blog content.
+- JavaScript date and time functionality provides current date/time information.
+
+## 💻 Running the Project Locally
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/lydiaperdomo/FullDev.git
+```
+
+### 2. Navigate to the project folder
+
+```bash
+cd FullDev/Capstone3
+```
+
+### 3. Install dependencies
+
+```bash
+npm install
+```
+
+### 4. Start the server
+
+```bash
+node index.js
+```
+
+Replace `index.js` if your server file has a different name.
+
+### 5. Open the application
+
+Visit `http://localhost:3000` if your application uses port 3000.
+
+## ⚠️ Data Storage Limitations
+
+This application does not use permanent database storage.
+
+Posts are maintained temporarily in server memory and are lost when the application restarts.
+
+## 🎯 Learning Objectives
+
+- Develop server-side applications using Node.js and Express.js
+- Implement CRUD (Create, Read, Update, Delete) operations
+- Handle HTTP GET and POST requests
+- Use EJS for dynamic page rendering
+- Process user input through HTML forms
+- Work with JavaScript date and time functionality
+- Understand temporary in-memory data storage
+- Run applications using a local development server
+
+## 📂 Project Type
+
+**Full-Stack Web Development | Node.js, Express.js, EJS & JavaScript**
+
+## 📚 Project Status
+
+✅ Completed
+
+## 🚀 Project Progression
+
+**Capstone 1:** Basic personal profile website built with HTML.
+
+**Capstone 2:** Styled personal website incorporating CSS, Bootstrap, and navigation.
+
+**Capstone 3:** Dynamic blog application featuring CRUD operations, server-side routing, EJS templates, and date/time functionality.
+
+This project demonstrates my progression from static HTML pages to dynamic web applications with server-side functionality.
