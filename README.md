@@ -58,34 +58,11 @@ Projects are organized by topic or course module and may include:
 
 ---
 
-## 📁 Example Projects
-
-Some projects included in this repository are:
-
-- Simon Game
-- Drum Kit
-- Dice Game
-- Blog Website
-- To-Do List
-- Weather App
-- QR Code Generator
-- Password Generator
-- Quote Generator
-- Calculator
-- Authentication Projects
-- CRUD Applications
-- API Integration Projects
-- Database Projects
-
-*Additional projects will continue to be added as I progress.*
-
----
-
 ## 🎯 Purpose
 
 This repository serves as:
 
-- A record of my coursework
+- A record of my coursework capstones
 - A portfolio demonstrating my programming skills
 - A reference for future development projects
 - A place to track my growth as a full stack developer
@@ -101,9 +78,6 @@ git clone https://github.com/yourusername/full-stack-development.git
 cd project-folder
 npm install
 npm start
-```
-
-Some projects are static websites and can simply be opened in your browser using the `index.html` file.
 
 ---
 
