@@ -1,0 +1,171 @@
+# Capstone 4 – Manga Search Web Application
+
+## 📌 Project Overview
+
+Capstone 4 is a manga search web application developed as part of my full-stack web development learning journey.
+
+The application integrates with the **MangaDex API** to retrieve manga information and dynamically display results based on user-selected search criteria.
+
+This project focuses on working with external APIs, processing JSON data, dynamically rendering content with EJS, and creating structured webpage layouts using CSS Flexbox.
+
+## 🛠️ Technologies Used
+
+- **HTML5** – Structures the webpage, forms, and search results.
+- **CSS3** – Provides custom styling and webpage layouts.
+- **CSS Flexbox** – Organizes and aligns webpage elements using flexible containers.
+- **JavaScript** – Handles application logic, array iteration, and data processing.
+- **Node.js** – Provides the server-side JavaScript runtime.
+- **Express.js** – Manages application routes and HTTP requests.
+- **EJS (Embedded JavaScript)** – Dynamically generates HTML using server-provided data.
+- **Axios** – Sends HTTP requests to the external API.
+- **MangaDex REST API** – Provides manga information and search data.
+- **JSON** – Used to process structured API response data.
+
+## ✨ Features
+
+- **Manga Search** – Retrieves manga information from the MangaDex API.
+- **Dynamic Dropdown Menu** – Populates selection options using API-provided tag data.
+- **Tag Selection** – Allows users to select a manga category or tag.
+- **Selected Option Retention** – Keeps the selected dropdown option active when results are displayed.
+- **Dynamic Search Results** – Displays manga titles retrieved from the API.
+- **Conditional Rendering** – Displays results or error messages depending on application state.
+- **Error Handling** – Displays an error message when one is provided by the server.
+- **Flexbox Layout** – Uses CSS Flexbox to organize webpage elements.
+
+## ⚙️ How It Works
+
+### 1. Express Server
+
+The application uses Node.js and Express.js to create a local web server.
+
+```javascript
+import express from "express";
+import axios from "axios";
+
+const app = express();
+const port = 3000;
+```
+
+### 2. External API Integration
+
+Axios communicates with the MangaDex API to retrieve manga information.
+
+```javascript
+const API_URL = "https://api.mangadex.org/manga";
+```
+
+The application processes API responses and passes the relevant data to EJS templates for display.
+
+### 3. Dynamic EJS Templates
+
+EJS allows JavaScript logic to run inside HTML templates.
+
+The application uses:
+
+- `forEach()` to iterate through arrays of manga and tag objects.
+- `<%= %>` to display dynamic values within HTML.
+- `<% %>` to execute JavaScript logic without directly displaying it.
+- `<%# %>` to add EJS comments.
+- `if / else if` statements to conditionally render content.
+
+### 4. Dynamic Tag Selection
+
+The application generates dropdown options from tag objects and retains the user's selected option.
+
+```ejs
+<% myArray.forEach(function(tag) { %>
+  <option value="<%= tag.id %>"
+    <%= (locals.selectedTag === tag.id)
+      ? "selected" : "" %>>
+    <%= tag.attributes.name.en %>
+  </option>
+<% }); %>
+```
+
+### 5. Displaying Manga Results
+
+The application checks whether an error exists or manga results are available before rendering content.
+
+```ejs
+<% if (locals.error) { %>
+  <p><%= error %></p>
+<% } else if (locals.mangaList && mangaList.length > 0) { %>
+  <ul>
+    <% mangaList.forEach(function(manga) { %>
+      <li>
+        <%= Object.values(manga.attributes.title)[0] %>
+      </li>
+    <% }); %>
+  </ul>
+<% } %>
+```
+
+## 💻 Running the Project Locally
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/lydiaperdomo/FullDev.git
+```
+
+### 2. Navigate to Capstone 4
+
+```bash
+cd FullDev/Capstone4
+```
+
+### 3. Install Dependencies
+
+```bash
+npm install
+```
+
+### 4. Start the Server
+
+```bash
+node index.js
+```
+
+Replace `index.js` with the actual server filename if different.
+
+### 5. Open the Application
+
+Navigate to:
+
+`http://localhost:3000`
+
+## 🎯 Learning Objectives
+
+- Integrate third-party REST APIs into a web application.
+- Make HTTP requests using Axios.
+- Understand and process JSON API responses.
+- Dynamically generate HTML using EJS templates.
+- Iterate through arrays and nested JavaScript objects.
+- Implement conditional rendering and error messages.
+- Maintain user-selected form values.
+- Build flexible webpage layouts using CSS Flexbox.
+- Connect server-side application logic with front-end presentation.
+
+## 📂 Project Type
+
+**Full-Stack Web Development | REST API Integration, Node.js, Express.js, Axios & EJS**
+
+## 📚 Project Status
+
+✅ Completed
+
+## 🚀 Project Progression
+
+**Capstone 1:** Basic personal profile website using HTML.
+
+**Capstone 2:** Styled personal website incorporating CSS, Bootstrap, and navigation.
+
+**Capstone 3:** Blog application with CRUD operations, Express routing, EJS templates, and date/time functionality.
+
+**Capstone 4:** Manga search application integrating an external REST API, Axios HTTP requests, dynamic EJS templates, conditional rendering, and CSS Flexbox layouts.
+
+This project demonstrates my growing experience with full-stack web development, particularly API integration, server-side data processing, and dynamically generated user interfaces.
+
+## 🔗 API Reference
+
+[MangaDex API](https://api.mangadex.org/docs/)
